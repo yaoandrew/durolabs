@@ -5,9 +5,9 @@ const PartList = (props) => {
       <div>
         <h3>Parts List</h3>
         <ul className="part-list-group">
-          <li>part1</li>
-          <li>part2</li>
-          <li>part3</li>
+          <li>{props.assembly.assemblyItems[0].partItemNum}</li>
+          <li>{props.assembly.assemblyItems[1].partItemNum}</li>
+          <li>{props.assembly.assemblyItems[2].partItemNum}</li>
         </ul>
       </div>
     )
