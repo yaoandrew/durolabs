@@ -2,7 +2,7 @@ import React from 'react';
 
 const Part = (props) => {
   return (
-      <li>Part {props.greeting} </li>
+      <li>Part Num {props.part.partItemNum}, Part Name {props.part.partName}</li>
     )
 };
 
