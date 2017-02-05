@@ -1,4 +1,4 @@
-const assembly = { 
+const assembly = [{ 
   assemblyItemNum : "99-00000",
   assemblyItemName : "Killer Gadget",
   assemblyDescription : "Teleportation in your pocket",
@@ -27,7 +27,7 @@ const assembly = {
     }, 
     {
       partItemNum : "82-00000",
-      partName : "Capacitor-0",
+      partName : "Capacitor",
       partDescription : "Capacitor, lots of capacity"
     }, 
     {
@@ -36,6 +36,6 @@ const assembly = {
       partDescription : "Screw, nonconductive, strong"
     }
     ]
-}
+}]
 
 export default assembly;

@@ -1,29 +1,10 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import Part from './part';
-import Summary from './summary';
-import PartList from './partList';
-import assembly from '../assemblyData';
-import PartDetail from './partDetail';
+import React from 'react'
+import { Router, Route, hashHistory } from 'react-router'
+import { render } from 'react-dom'
+import App from './app'
 
-//write function to get raw JSON data for assembly from DB instead of file
-//getAssemblyData = (assemblyId)
-
-class App extends Component  {
-  constructor(props){
-    super(props)
-    this.state = {assembly}
-  }
-  
-  render(){
-    return (
-            <div>
-              <Summary assembly = {this.state.assembly}/>
-              <PartList assembly = {this.state.assembly}/>
-              <PartDetail />
-            </div>
-            )}
-  
-}
-
-ReactDOM.render( <App />, document.getElementById('app'))
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App} />
+  </Router>
+), document.getElementById('app'))
