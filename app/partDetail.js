@@ -1,11 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-const PartDetailList = (props) => {
+const PartDetail = (props) => {
   return (
-    <div>
-        <h1>Table with part details that appear</h1>
-    </div>
+    <tr className="part-detail-item">
+        <td>{props.part.title}</td>
+        <td>{props.part.revision}</td>
+        <td>{props.part.format}</td>
+      </tr>
+
     )
 }
 
-export default PartDetailList;
+export default PartDetail;

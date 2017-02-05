@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Summary from './summary';
 import PartList from './partList';
 import assembly from '../assemblyData';
-import PartDetail from './partDetail';
+import PartDetailList from './partDetailList';
 import { Link } from 'react-router';
 import Drawer from './drawer'
 
@@ -23,8 +23,6 @@ class App extends Component {
           <Summary assembly = {this.state.assembly} />
           <PartList assembly = {this.state.assembly}/>
         </div>
-        <PartDetail />
-        <Drawer assembly = {this.state.assembly}/>
       </div>
     )
   }
