@@ -1,0 +1,13 @@
+.assembly-list {
+  list-style : none;
+  font-size : 15px;
+}
+
+.part-list {
+  list-style : none;
+  font-size : 15px;
+}
+
+.part-item:hover {
+  color : blue;
+}

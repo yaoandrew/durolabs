@@ -4,6 +4,7 @@ import Part from './part';
 import Summary from './summary';
 import PartList from './partList';
 import assembly from '../assemblyData';
+import PartDetail from './partDetail';
 
 //write function to get raw JSON data for assembly from DB instead of file
 //getAssemblyData = (assemblyId)
@@ -19,6 +20,7 @@ class App extends Component  {
             <div>
               <Summary assembly = {this.state.assembly}/>
               <PartList assembly = {this.state.assembly}/>
+              <PartDetail />
             </div>
             )}
   
