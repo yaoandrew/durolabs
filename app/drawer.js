@@ -2,9 +2,9 @@ import React from 'react';
 
 const Drawer = (props) => {
   return (
-      <div>
+      <div className="part-drawer">
         <h3>Parts info</h3>
-        <ul className="part-drawer">
+        <ul>
           <li>Item Name: {props.assembly.assemblyItemName}</li>
           <li>Description: {props.assembly.assemblyDescription}</li>
         </ul>

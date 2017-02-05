@@ -7,12 +7,11 @@ const PartList = (props) => {
     return <Part key={item.partItemNum} part={item} />
   })
   
-  console.log(assemblyParts[0])
 
   return (
       <div>
         <h3>Parts List</h3>
-        <ul className="part-list-group">
+        <ul className="part-list">
           {assemblyParts}
         </ul>
       </div>
