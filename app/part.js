@@ -1,14 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 
-const Part = (props) => {
-  return (
-      <tr className="part-list-item">
-        <td><Link to={`/partdetail/${props.part.partItemNum}`}>{props.part.partItemNum}</Link></td>
-        <td>{props.part.partName}</td>
-        <td>{props.part.partDescription}</td>
-      </tr>
-    )
-};
+class Part extends Component {
+  constructor() {
+    super()
+    this.state = {
+      showToolTip : false,
+      currentToolTip : ""
+    }
+  }
+
+  handleHover() {
+    this.setState({
+      showToolTip : true,
+      currentToolTip: this.props.part
+    })
+
+    this.props.myCommFunc(this.state.currentToolTip)
+  }
+
+  render() {
+    return (
+      <tr className="part-list-item" onMouseEnter={this.handleHover.bind(this)}>
+         <td><Link to={`/partdetail/${this.props.part.partItemNum}`}>{this.props.part.partItemNum}</Link></td>
+         <td>{this.props.part.partName}</td>
+         <td>{this.props.part.partDescription}</td>
+       </tr>
+      )
+  }    
+}
 
 export default Part;

@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 import Part from './part';
+import Drawer from './drawer';
 
 
-// class PartList extends Component {
-//   constructor(props) {
-//     super(props)
+class PartList extends Component {
+  constructor(props) {
+    super(props)
 
+    this.state = {}
+    
 
-//   }
+  }
 
+  getInfoFromChild(info) {
+    console.log (info)
+    this.setState({info})
+  }
+ 
+  render (){
 
-const PartList = (props) => {
-  const assemblyParts = props.assembly[0].assemblyItems.map((item) => {
-      return <Part key={item.partItemNum} part={item} />
-    })
-  
-  // render (){
-  //   }
-  
+      const assemblyParts = this.props.assembly[0].assemblyItems.map((item) => {
+        return <Part myCommFunc={this.getInfoFromChild.bind(this)} key={item.partItemNum} part={item} />
+      })
 
-  return (
+      return (
       <div className="col">
         <h3>Parts List</h3>
         <table className="parts-table table table-hover table-bordered">
@@ -34,8 +38,10 @@ const PartList = (props) => {
             {assemblyParts}
           </tbody>  
         </table>
+        <Drawer  />
       </div>
     )
+  }
 };
 
 export default PartList;

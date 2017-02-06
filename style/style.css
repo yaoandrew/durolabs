@@ -2,6 +2,10 @@
   width : 200px;
 }
 
+.part-drawer {
+  opacity : 0.3;
+}
+
 .part-item:hover {
   color : blue;
 }
