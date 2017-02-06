@@ -12,15 +12,14 @@ class PartList extends Component {
 
   }
 
-  getInfoFromChild(info) {
-    console.log (info)
+  handleUpdateFromChild(info) {
     this.setState({info})
   }
  
   render (){
 
       const assemblyParts = this.props.assembly[0].assemblyItems.map((item) => {
-        return <Part myCommFunc={this.getInfoFromChild.bind(this)} key={item.partItemNum} part={item} />
+        return <Part myCommFunc={this.handleUpdateFromChild.bind(this)} key={item.partItemNum} part={item} />
       })
 
       return (
@@ -38,7 +37,7 @@ class PartList extends Component {
             {assemblyParts}
           </tbody>  
         </table>
-        <Drawer  />
+        <Drawer toolTipInfo = {this.state} />
       </div>
     )
   }

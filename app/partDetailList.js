@@ -1,14 +1,20 @@
 import React from 'react';
+import assembly from '../assemblyData';
 
 const PartDetailList = (props) => {
+
+console.log(assembly[0].assemblyItems);
+window.x = assembly[0].assemblyItems;
+
+console.log("this window" ,window.x)
   return (
     <div>
         <h3>PartDetail that appear for {props.params.partID}</h3>
     </div>
 
-// const partDetailItems = props.filter(ItemNum).documents.map((item) => {
+// const partDetailItems = assembly.filter(ItemNum).documents.map((item) => {
 //   return <PartDetail key= />
-// }
+
 
       // return (
       //   <div className="col">

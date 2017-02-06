@@ -3,8 +3,13 @@ import React, { Component }from 'react';
 class Drawer extends Component {
   constructor (props){
     super(props)
-    this.state = {}
+    this.state = { onHover : false}
   }
+
+componentWillReceiveProps(){
+  //console.log (this.props.toolTipInfo.info)
+  this.setState({onHover : true})
+}
 
   render () {
     return (
@@ -13,7 +18,7 @@ class Drawer extends Component {
           <h3>Parts info</h3>
         </div>
         <div className="panel-body">
-          <p>Item Name:</p>
+          <p>Item Name: {this.props.info}</p>
           <p>Description:</p>
         </div>
       </div>
