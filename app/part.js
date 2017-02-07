@@ -10,33 +10,25 @@ class Part extends Component {
     }
   }
 
-  handleMouseIn() {
+  handleMouseOver() {
+    
     this.setState({
       showToolTip : true,
       currentToolTip: this.props.part
     })
+    console.log(this.props.part)
     console.log("in")
-
-
     this.updateParent()
   }
 
-  handleMouseOut() {
-    // this.setState({
-    //   showToolTip : false,
-    //   currentToolTip : null
-    // })
-    // console.log("out")
-    // this.updateParent()
-  }
-
+  
   updateParent() {
     this.props.myCommFunc(this.state.currentToolTip)
   }
+
   render() {
     return (
-      <tr className="part-list-item" onMouseOver={this.handleMouseIn.bind(this)} 
-        onMouseLeave={this.handleMouseOut.bind(this)}>
+      <tr className="part-list-item" onMouseOver={this.handleMouseOver.bind(this)}>
          <td><Link to={`/partdetail/${this.props.part.partItemNum}`}>
             {this.props.part.partItemNum}</Link></td>
          <td>{this.props.part.partName}</td>

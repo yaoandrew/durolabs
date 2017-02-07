@@ -16,7 +16,7 @@ class PartList extends Component {
 
   handleUpdateFromChild(info) {
     this.setState({info})
-    console.log("parent", info)
+    console.log("parent", this.state)
   }
  
   render (){

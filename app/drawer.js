@@ -3,13 +3,8 @@ import React, { Component }from 'react';
 class Drawer extends Component {
   constructor (props){
     super(props)
-    this.state = { onHover : false}
   }
 
-componentWillReceiveProps(){
-  //console.log (this.props.toolTipInfo.info)
-  this.setState({onHover : true})
-}
 
   render () {
     return (

@@ -3,8 +3,6 @@ import assembly from '../assemblyData';
 
 const PartDetailList = (props) => {
 
-console.log(assembly[0].assemblyItems);
-window.x = assembly[0].assemblyItems;
 
 console.log("this window" ,window.x)
   return (
