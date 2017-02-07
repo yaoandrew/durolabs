@@ -13,7 +13,8 @@ componentWillReceiveProps(){
 
   render () {
     return (
-      <div className="part-drawer panel panel-default">
+      <div className="part-drawer panel panel-default" style = {this.props.isVisible ? 
+        {opacity : 1 } : {opacity : 0}}>
         <div className="panel-heading">
           <h3>Parts info</h3>
         </div>

@@ -16,20 +16,18 @@ class Part extends Component {
       currentToolTip: this.props.part
     })
     console.log("in")
-    console.log("In fired :",this.state.currentToolTip)
 
 
     this.updateParent()
   }
 
   handleMouseOut() {
-    this.setState({
-      showToolTip : false,
-      currentToolTip : null
-    })
-    console.log("out")
-    console.log("Out fired: ",this.state.currentToolTip)
-    this.updateParent()
+    // this.setState({
+    //   showToolTip : false,
+    //   currentToolTip : null
+    // })
+    // console.log("out")
+    // this.updateParent()
   }
 
   updateParent() {

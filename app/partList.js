@@ -7,19 +7,22 @@ class PartList extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      isVisible : true
+    }
     
 
   }
 
   handleUpdateFromChild(info) {
     this.setState({info})
+    console.log("parent", info)
   }
  
   render (){
 
       const assemblyParts = this.props.assembly[0].assemblyItems.map((item) => {
-        return <Part myCommFunc={this.handleUpdateFromChild.bind(this)} key={item.partItemNum} part={item} />
+        return <Part myCommFunc={() => this.handleUpdateFromChild.bind(this)} key={item.partItemNum} part={item} />
       })
 
       return (
@@ -37,7 +40,7 @@ class PartList extends Component {
             {assemblyParts}
           </tbody>  
         </table>
-        <Drawer toolTipInfo = {this.state} />
+        <Drawer toolTipInfo = {this.state} isVisible = {this.state.isVisible} />
       </div>
     )
   }
