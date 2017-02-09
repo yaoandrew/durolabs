@@ -4,17 +4,21 @@ import PartDetail from './partDetail';
 
 const PartDetailList = (props) => {
 
-console.log(props)
-
-  const partDetails = assembly[0].assemblyItems
+  const documents = assembly[0].assemblyItems
     .filter(item => {return item.partItemNum === props.params.partID})
     .map(item => {return item.documents})
-    .map(item => {return <PartDetail partDets = {item}/>})
+  
+  let partDetails  
+  
+  if (documents[0]) {
+    partDetails = documents[0]
+    .map(item => (<PartDetail key = {item.title} part={item}/>))
+  }
 
   return (
     <div className="col">
       <h3>Parts Detail List</h3>
-      <table className="part-detail-table table table-hover table-bordered">
+      <table className="part-detail-table table table-bordered">
         <thead className="part-detail-table-header">
           <tr>
             <th>Title</th>
