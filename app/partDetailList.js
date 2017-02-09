@@ -1,38 +1,35 @@
 import React from 'react';
 import assembly from '../assemblyData';
+import PartDetail from './partDetail';
 
 const PartDetailList = (props) => {
 
+console.log(props)
 
-console.log("this window" ,window.x)
-  return (
-    <div>
-        <h3>PartDetail that appear for {props.params.partID}</h3>
-    </div>
-
-// const partDetailItems = assembly.filter(ItemNum).documents.map((item) => {
-//   return <PartDetail key= />
+    const partDetails = assembly[0].assemblyItems
+      .filter(item => {return item.partItemNum === props.params.partID})
+      .map(item => {return item.documents})
+      .map(item => {return <PartDetail partDets = {item}/>})
 
 
-      // return (
-      //   <div className="col">
-      //   <h3>Parts Detail List</h3>
-      //   <table className="part-detail-table table table-hover table-bordered">
-      //     <thead className="part-detail-table-header">
-      //       <tr>
-      //         <th>Title</th>
-      //         <th>Revision</th>
-      //         <th>Format</th>
-      //       </tr>
-      //     </thead>
-      //     <tbody>
-      //       {partDetailItems}
-      //     </tbody>  
-      //   </table>
-      // </div>
-      // )
 
 
+    return (
+      <div className="col">
+        <h3>Parts Detail List</h3>
+        <table className="part-detail-table table table-hover table-bordered">
+          <thead className="part-detail-table-header">
+            <tr>
+              <th>Title</th>
+              <th>Revision</th>
+              <th>Format</th>
+            </tr>
+          </thead>
+          <tbody>
+          {partDetails}
+          </tbody>  
+        </table>
+      </div>
     )
 }
 

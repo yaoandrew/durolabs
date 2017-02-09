@@ -8,21 +8,22 @@ class PartList extends Component {
     super(props)
 
     this.state = {
-      isVisible : true
+      isVisible : false
     }
     
 
   }
 
   handleUpdateFromChild(info) {
-    this.setState({info})
-    console.log("parent", this.state)
+    //this.setState({info})
+    console.log("parent handle update fired", info)
   }
  
   render (){
 
       const assemblyParts = this.props.assembly[0].assemblyItems.map((item) => {
-        return <Part myCommFunc={() => this.handleUpdateFromChild.bind(this)} key={item.partItemNum} part={item} />
+        return <Part myCommFunc={this.handleUpdateFromChild.bind(this)} 
+          key={item.partItemNum} part={item} />
       })
 
       return (

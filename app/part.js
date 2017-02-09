@@ -16,9 +16,7 @@ class Part extends Component {
       showToolTip : true,
       currentToolTip: this.props.part
     })
-    console.log(this.props.part)
-    console.log("in")
-    this.updateParent()
+    this.updateParent(this.props.part)
   }
 
   
