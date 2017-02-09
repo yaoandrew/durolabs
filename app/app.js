@@ -7,9 +7,6 @@ import PartDetailList from './partDetailList';
 import { Link } from 'react-router';
 import Drawer from './drawer'
 
-//write function to get raw JSON data for assembly from DB instead of file
-//getAssemblyData = (assemblyId)
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +23,6 @@ class App extends Component {
       </div>
     )
   }
-  
 }
 
 export default App;

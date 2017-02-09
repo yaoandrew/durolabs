@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import Part from './part';
 import Drawer from './drawer';
 
-
 class PartList extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       isVisible : false
     }
-    
-
   }
 
   handleUpdateFromChild(info) {

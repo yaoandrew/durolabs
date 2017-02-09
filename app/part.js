@@ -11,14 +11,13 @@ class Part extends Component {
   }
 
   handleMouseOver() {
-    
     this.setState({
       showToolTip : true,
       currentToolTip: this.props.part
     })
+
     this.updateParent(this.props.part)
   }
-
   
   updateParent() {
     this.props.myCommFunc(this.state.currentToolTip)

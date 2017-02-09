@@ -5,7 +5,6 @@ class Drawer extends Component {
     super(props)
   }
 
-
   render () {
     return (
       <div className="part-drawer panel panel-default" style = {this.props.isVisible ? 
@@ -19,7 +18,6 @@ class Drawer extends Component {
         </div>
       </div>
     )
-
   }
 }
 
