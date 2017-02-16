@@ -5,18 +5,27 @@ class Part extends Component {
   constructor() {
     super()
     this.state = {
-      showToolTip : false,
+      isVisible : false,
       currentToolTip : ""
     }
   }
 
+  handleMouseExit() {
+    this.setState({
+      isVisible : false,
+      currentToolTip : ""
+    })
+  }
+
   handleMouseOver() {
     this.setState({
-      showToolTip : true,
+      isVisible : true,
       currentToolTip: this.props.part
     })
 
-    this.updateParent(this.props.part)
+    console.log ("Part State: ",this.state)
+
+    this.updateParent(this.props.part, this.state)
   }
   
   updateParent() {
@@ -25,7 +34,8 @@ class Part extends Component {
 
   render() {
     return (
-      <tr className="part-list-item" onMouseOver={this.handleMouseOver.bind(this)}>
+      <tr className="part-list-item" onMouseEnter={this.handleMouseOver.bind(this)}
+        onMouseLeave={this.handleMouseExit.bind(this)}>
          <td><Link to={`/partdetail/${this.props.part.partItemNum}`}>
             {this.props.part.partItemNum}</Link></td>
          <td>{this.props.part.partName}</td>

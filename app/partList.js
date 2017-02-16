@@ -10,9 +10,13 @@ class PartList extends Component {
     }
   }
 
-  handleUpdateFromChild(info) {
+  handleUpdateFromChild(info, vis) {
     //this.setState({info})
-    console.log("parent handle update fired", info)
+    console.log("handleUpdate fired with info and vis:", vis)
+    // this.setState ({
+    //   isVisible : visibility
+    // })
+
   }
  
   render (){
